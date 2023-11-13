@@ -1,3 +1,33 @@
+# Test task for Oleg
+What have been done: 
+1) Re-write code for hooks
+2) Fix all behaviour because code isn`t worked 
+3) Fix all TS errors
+4) Slightly added a styles and components from MUI for better view
+5) Write tests for most required functionallity: 
+    - Add Item
+    - Show Components
+    - Mark all as complete
+    - Remove Item action
+    - Edit item action
+6) Added coverage report
+
+# Commands for running
+1. npm i
+2. npm start
+3. npm test (for starting tests)
+4. npm run test:coverage - for view coverage report ( currently 62.98 %)
+
+# Troubleshooting
+   The most time spent on this task (70%) was for fix code and re-writing
+   without changing existing code structure. I Slightly update folder 
+   structure for better develop navigation. Please contact me if ytou have 
+   any question. Thanks)
+   Some functionality I didn`t fixed - active and completed tabs in footer. 
+   Based on old routing system and subscribe method (from the original structure)
+   which is not supported on this case. This functionallity can be easily done with
+   simple solution.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
