@@ -29,7 +29,7 @@ const TodoApp: React.FC<IAppProps> = ({model}) => {
                     />
 
                 </Routes>
-                {(activeTodoCount || completedCount) && (
+                {(activeTodoCount !== 0 || completedCount !== 0) && (
                     <TodoFooter
                         count={activeTodoCount}
                         completedCount={completedCount}
