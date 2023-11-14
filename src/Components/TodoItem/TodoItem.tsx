@@ -57,7 +57,7 @@ const TodoItem: React.FC<ITodoItemProps> = (props) => {
                 <label onDoubleClick={(e) => handleEdit()}>
                     {props.todo.title}
                 </label>
-                <button className="destroy" onClick={props.onDestroy} />
+                <button className="destroy" data-testid='remove-button' onClick={props.onDestroy} />
             </div>
             <input
                 ref={editFieldRef}

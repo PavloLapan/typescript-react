@@ -32,7 +32,6 @@ const Header: React.FC<HeaderProps> = ({ model }) => {
                    onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) =>
                        handleNewTodoKeyDown(e as React.KeyboardEvent<HTMLInputElement>)
                    }/>
-
         </header>
     )
 }

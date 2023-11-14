@@ -25,6 +25,36 @@ test('renders TodoItem component', () => {
     expect(todoElement).toBeInTheDocument();
 });
 
+test('calls onSave when editing an existing element', () => {
+    const onSaveMock = jest.fn();
+    render(
+        <TodoItem
+            key={'1'}
+            todo={mockTodo}
+            onToggle={() => {}}
+            onDestroy={() => {}}
+            onEdit={() => {}}
+            editing={false}
+            onSave={onSaveMock}
+            onCancel={() => {}}
+        />
+    );
+
+    const label = screen.getByText(mockTodo.title);
+    fireEvent.doubleClick(label);
+
+    const inputField = screen.getByRole('textbox', { name: '' });
+    expect(inputField).toHaveValue(mockTodo.title);
+
+    fireEvent.change(inputField, { target: { value: 'Updated Todo Item' } });
+    fireEvent.keyDown(inputField, { key: 'Enter', code: 'Enter' });
+
+    // Check that onSave was called with the updated value
+    expect(onSaveMock).toHaveBeenCalledWith('Updated Todo Item');
+});
+
+
+
 test('calls onDestroy when Remove button is clicked', () => {
     const onDestroyMock = jest.fn();
     render(
@@ -39,7 +69,7 @@ test('calls onDestroy when Remove button is clicked', () => {
             onCancel={() => {}}
         />
     );
-    const removeButton = screen.getByText(/Remove/i);
+    const removeButton = screen.getByTestId('remove-button')
     fireEvent.click(removeButton);
     expect(onDestroyMock).toHaveBeenCalled();
 });

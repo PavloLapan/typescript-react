@@ -10,13 +10,16 @@ What have been done:
     - Mark all as complete
     - Remove Item action
     - Edit item action
+    - Tests for Utils 
+    - Tests for Model
 6) Added coverage report
+7) Fix Styles
 
 # Commands for running
 1. npm i
 2. npm start
 3. npm test (for starting tests)
-4. npm run test:coverage - for view coverage report ( currently 62.98 %)
+4. npm run test:coverage - for view coverage report ( currently 82.7 %)
 
 # Troubleshooting
    The most time spent on this task (70%) was for fix code and re-writing
