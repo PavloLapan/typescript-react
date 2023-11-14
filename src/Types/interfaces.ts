@@ -1,4 +1,5 @@
 import React from "react";
+import {TodoModel} from "../Utils/todoModel";
 
 export interface ITodo {
     id: string,
@@ -24,7 +25,6 @@ export interface ITodoItemState {
 export interface ITodoFooterProps {
     completedCount : number;
     onClearCompleted : any;
-    nowShowing : string;
     count : number;
 }
 
@@ -48,6 +48,7 @@ export interface IAppProps {
 }
 
 export interface IAppState {
-    editing? : string;
+    editing? : string | null;
     nowShowing? : string
 }
+

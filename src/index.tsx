@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import TodoApp from './App';
 import {TodoModel} from "./Utils/todoModel";
-import './index.css'
+import '../src/Assets/index.css'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

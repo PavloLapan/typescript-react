@@ -1,8 +1,6 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ENTER_KEY, ESCAPE_KEY } from '../../Constants/constants';
 import { ITodoItemProps} from "../../Types/interfaces";
-import {Button, Checkbox} from "@mui/material";
 
 const TodoItem: React.FC<ITodoItemProps> = (props) => {
     const [editText, setEditText] = useState<string>(props.todo.title);
@@ -50,7 +48,8 @@ const TodoItem: React.FC<ITodoItemProps> = (props) => {
     return (
         <li style={{margin: '1rem'}}>
             <div className="view">
-                <Checkbox
+                <input
+                    type='checkbox'
                     className="toggle"
                     checked={props.todo.completed}
                     onChange={props.onToggle}
@@ -58,10 +57,9 @@ const TodoItem: React.FC<ITodoItemProps> = (props) => {
                 <label onDoubleClick={(e) => handleEdit()}>
                     {props.todo.title}
                 </label>
-                <Button sx={{margin: '1rem'}} variant="outlined"  onClick={props.onDestroy} >Remove</Button>
+                <button className="destroy" onClick={props.onDestroy} />
             </div>
             <input
-
                 ref={editFieldRef}
                 className="edit"
                 value={editText}

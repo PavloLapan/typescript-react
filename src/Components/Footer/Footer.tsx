@@ -1,17 +1,9 @@
 import {Utils} from "../../Utils/utils";
 import {ITodoFooterProps} from '../../Types/interfaces'
 import { Link } from 'react-router-dom';
-import {Button} from "@mui/material"; // Add this import
 
 const TodoFooter = (props: ITodoFooterProps) => {
     const activeTodoWord = Utils.pluralize(props.count, 'item');
-    let clearButton = null;
-
-    if (props.completedCount > 0) {
-        clearButton = (
-            <Button variant="outlined" onClick={props.onClearCompleted}>Clear completed items</Button>
-        );
-    }
 
     return (
         <footer className="footer">
@@ -29,7 +21,9 @@ const TodoFooter = (props: ITodoFooterProps) => {
                     <Link to="/completed">Completed ({props.completedCount})</Link>
                 </li>
             </ul>
-            {clearButton}
+            {props.completedCount > 0 && (
+                <button className="clear-completed" onClick={props.onClearCompleted}>Clear completed items</button>
+            )}
         </footer>
     );
 }

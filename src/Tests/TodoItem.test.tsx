@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import {TodoItem} from '../Components/todoItem/todoItem';
+import {TodoItem} from '../Components/TodoItem/TodoItem';
 
 const mockTodo = {
     id: '1',
